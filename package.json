@@ -1,0 +1,20 @@
+{
+  "name": "oo",
+  "version": "1.0.0",
+  "description": "Programmation Orientée Objet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ".\\node_modules\\.bin\\tsc .\\src\\main.ts",
+    "serve": "npm run build && node src/main"
+  },
+  "keywords": [
+    "poo",
+    "typescript"
+  ],
+  "author": "Aélion <jean-luc.aubert@aelion.fr>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
