@@ -14,10 +14,10 @@ var Collection = /** @class */ (function () {
     Collection.prototype.add = function (element) {
         this.liste.push(element);
     };
-    Collection.prototype["delete"] = function (element) { };
     Collection.prototype.update = function (element) { };
     Collection.prototype.get = function (indice) {
-        return this.liste[indice];
+        var position = indice - 1; // Le premier indice d'un tableau est 0 !
+        return this.liste[position];
     };
     Collection.prototype.getAll = function () {
         return this.liste;

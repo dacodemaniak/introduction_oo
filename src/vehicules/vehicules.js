@@ -15,34 +15,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Marques = void 0;
+exports.Vehicules = void 0;
 var collection_1 = require("../collection/collection");
-var Marques = /** @class */ (function (_super) {
-    __extends(Marques, _super);
-    function Marques() {
+var Vehicules = /** @class */ (function (_super) {
+    __extends(Vehicules, _super);
+    function Vehicules() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Marques.prototype["delete"] = function (element) {
+    Vehicules.prototype["delete"] = function (element) {
         throw new Error("Method not implemented.");
     };
-    /**
-     * Override (réécriture de méthode)
-     * @param element
-     */
-    Marques.prototype.add = function (element) {
-        if (!this.isInArray(element)) {
-            this.liste.push(element);
-        }
-    };
-    Marques.prototype.isInArray = function (marque) {
-        var isInArray = false;
-        for (var i = 0; i < this.liste.length; i++) {
-            if (this.liste[i].getLibelle() === marque.getLibelle()) {
-                isInArray = true;
-            }
-        }
-        return isInArray;
-    };
-    return Marques;
+    return Vehicules;
 }(collection_1.Collection));
-exports.Marques = Marques;
+exports.Vehicules = Vehicules;

@@ -1,4 +1,4 @@
-export class Collection<T> {
+export abstract class Collection<T> {
     /**
      * Class attributes
      */
@@ -11,12 +11,13 @@ export class Collection<T> {
         this.liste.push(element);
     }
 
-    public delete(element: T): void {}
+    public abstract delete(element: T): void;
 
     public update(element: T): void {}
 
     public get(indice: number): T {
-        return this.liste[indice];
+        let position: number = indice - 1; // Le premier indice d'un tableau est 0 !
+        return this.liste[position];
     }
 
     public getAll(): T[] {
