@@ -76,7 +76,8 @@ autreVoiture.setMarque(collection.get(2));
 vehicules.add(autreVoiture);
 
 // Boucle pour afficher le tout
-vehicules.getAll().forEach((vehicule: Vehicule) => {
-    console.log(vehicule.getImmatriculation() + ' de marque ' + vehicule.getMarque().getLibelle());
-});
+for (let i = 0; i < vehicules.getAll().length; i++) {
+    const vehicule = vehicules.get(i + 1);
+    console.log('Vehicule : ' + vehicule.getImmatriculation() + ' de marque : ' + vehicule.getMarque().getLibelle());
+}
 
