@@ -1,4 +1,8 @@
-export abstract class Collection<T> {
+import { AfficherInterface } from "../interfaces/afficher-interface";
+
+export abstract class Collection<T> implements AfficherInterface {
+    public abstract afficher(): string;
+
     /**
      * Class attributes
      */

@@ -2,6 +2,17 @@ import { Collection } from "../collection/collection";
 import { Marque } from "./marque";
 
 export class Marques extends Collection<Marque> {
+    /**
+     * Implémentation de la méthode afficher() de l'interface AfficherInterface
+     * @returns 
+     */
+    public afficher(): string {
+        let sortie: string = '';
+        for (let i = 0; i < this.liste.length; i++) {
+            sortie = sortie + ' ' + this.liste[i].afficher() + '\n';
+        }
+        return sortie;
+    }
 
     public delete(element: Marque): void {
         throw new Error("Method not implemented.");

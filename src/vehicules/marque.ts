@@ -1,8 +1,14 @@
+import { AfficherInterface } from "../interfaces/afficher-interface";
+
 /**
  * Marque
  *  Class that represents the marks of vehicles
  */
-export class Marque {
+export class Marque implements AfficherInterface {
+    public afficher(): string {
+        return this.libelle;
+    }
+
     /**
      * @var string
      */

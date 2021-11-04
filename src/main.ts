@@ -34,11 +34,11 @@ collection.add(marque2);
 // Essayer d'ajouter à nouveau la marque Renault dans la collection
 marques.add(marque1);
 
-console.log('marque1 : ' + marque1.getLibelle()); // Expected Renault
+console.log('marque1 : ' + marque1.afficher()); // Expected Renault
 
 marque1.setLibelle('Citroën');
 
-console.log('Maintenant marque1 : ' + marque1.getLibelle()); // Expected Renault
+console.log('Maintenant marque1 : ' + marque1.afficher()); // Expected Renault
 
 // Voir le nombre d'éléments dans la liste des marques
 // Attend : 2 ( et pas 3 )
@@ -79,5 +79,8 @@ vehicules.add(autreVoiture);
 for (let i = 0; i < vehicules.getAll().length; i++) {
     const vehicule = vehicules.get(i + 1);
     console.log('Vehicule : ' + vehicule.getImmatriculation() + ' de marque : ' + vehicule.getMarque().getLibelle());
-}
+} // User story est DONE
 
+// Objectif à atteindre
+console.log(vehicules.afficher()); // pour afficher immatriculation et libellé de marque
+console.log(collection.afficher()); // pour afficher la liste des libellés de marque

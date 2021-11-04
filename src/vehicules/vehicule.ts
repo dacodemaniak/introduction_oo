@@ -1,12 +1,16 @@
+import { AfficherInterface } from "../interfaces/afficher-interface";
 import { Marque } from "./marque";
 
-export class Vehicule {
+export class Vehicule implements AfficherInterface {
     private immatriculation: string;
     protected marque: Marque;
 
     public constructor(immatriculation: string) {
         console.log('Hello Vehicule::constructor');
         this.immatriculation = immatriculation;
+    }
+    afficher(): string {
+        return this.immatriculation + ' ' + this.marque.afficher();
     }
 
     /**
