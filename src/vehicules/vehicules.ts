@@ -6,6 +6,13 @@ import { Vehicule } from "./vehicule";
  * pour collectionner uniquement les objets Véhicule
  */
 export class Vehicules extends Collection<Vehicule> {
+    public displayOrder: number = 0;
+
+    public add(vehicule: Vehicule): void {
+        vehicule.displayOrder = this.displayOrder;
+        super.add(vehicule);
+    }
+    
     public afficher(): string {
         let sortie: string = '';
         for (let i = 0; i < this.liste.length; i++) {

@@ -5,12 +5,23 @@ export class Vehicule implements AfficherInterface {
     private immatriculation: string;
     protected marque: Marque;
 
+    /**
+     * @var displayOrder number default 0
+     * 0 means immat first then marque
+     * 1 means marque first then immat
+     */
+    public displayOrder: number = 0;
+
     public constructor(immatriculation: string) {
         console.log('Hello Vehicule::constructor');
         this.immatriculation = immatriculation;
     }
     afficher(): string {
-        return this.immatriculation + ' ' + this.marque.afficher();
+        if (this.displayOrder === 0) {
+            return this.immatriculation + ' ' + this.marque.afficher();
+        } else {
+            return this.marque.afficher() + ' ' + this.immatriculation;
+        }
     }
 
     /**

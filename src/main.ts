@@ -3,6 +3,7 @@
  */
 
 import { Collection } from './collection/collection';
+import { Singleton } from './patterns/singleton';
 import { Marque } from './vehicules/marque';
 import { MarqueCollection } from './vehicules/marque-collection';
 import { Marques } from './vehicules/marques';
@@ -66,21 +67,38 @@ console.log('Elément n° 2 ', collection.get(2));
 
 // 3. Dans main.ts faire une boucle qui parcourt la collection des véhicules
 
+/**
+ * Instancier une collection de Véhicules
+ */
 const vehicules: Vehicules = new Vehicules();
+vehicules.displayOrder = 0;
+
+
 const maVoiture: Vehicule = new Vehicule('AAA 999 BBB');
 maVoiture.setMarque(marque1);
+maVoiture.displayOrder = 1;
 vehicules.add(maVoiture);
+
+const vehiculeCollection: Vehicules = new Vehicules();
 
 const autreVoiture: Vehicule = new Vehicule('BBB 888 CCC');
 autreVoiture.setMarque(collection.get(2));
-vehicules.add(autreVoiture);
+//autreVoiture.displayOrder = 1;
+vehiculeCollection.add(autreVoiture);
 
-// Boucle pour afficher le tout
-for (let i = 0; i < vehicules.getAll().length; i++) {
-    const vehicule = vehicules.get(i + 1);
-    console.log('Vehicule : ' + vehicule.getImmatriculation() + ' de marque : ' + vehicule.getMarque().getLibelle());
-} // User story est DONE
 
 // Objectif à atteindre
 console.log(vehicules.afficher()); // pour afficher immatriculation et libellé de marque
 console.log(collection.afficher()); // pour afficher la liste des libellés de marque
+
+
+// Essayer de trouver une solution pour que l'affichage des véhicules
+// puisse être :
+//  immatriculation marque
+//  ou
+//  marque immatriculation
+
+// Tester Singleton
+let singleton: Singleton = Singleton.getInstance();
+singleton = Singleton.getInstance();
+const unAutreTruc = Singleton.getInstance();
