@@ -4,6 +4,7 @@
 
 import { Collection } from './collection/collection';
 import { Singleton } from './patterns/singleton';
+import { VehiculeFactory } from './patterns/vehicule-factory';
 import { Marque } from './vehicules/marque';
 import { MarqueCollection } from './vehicules/marque-collection';
 import { Marques } from './vehicules/marques';
@@ -74,15 +75,14 @@ const vehicules: Vehicules = Vehicules.getInstance();
 vehicules.displayOrder = 0;
 
 
-const maVoiture: Vehicule = new Vehicule('AAA 999 BBB');
+const maVoiture: Vehicule = VehiculeFactory.immatOnly('AAA 999 BBB');
 maVoiture.setMarque(marque1);
 maVoiture.displayOrder = 1;
 vehicules.add(maVoiture);
 
 const vehiculeCollection: Vehicules = Vehicules.getInstance();
 
-const autreVoiture: Vehicule = new Vehicule('BBB 888 CCC');
-autreVoiture.setMarque(collection.get(2));
+const autreVoiture: Vehicule = VehiculeFactory.immatAndMarque('BBB 888 CCC', collection.get(2) );
 //autreVoiture.displayOrder = 1;
 vehiculeCollection.add(autreVoiture);
 

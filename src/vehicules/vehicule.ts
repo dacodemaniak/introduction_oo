@@ -16,6 +16,7 @@ export class Vehicule implements AfficherInterface {
         console.log('Hello Vehicule::constructor');
         this.immatriculation = immatriculation;
     }
+
     afficher(): string {
         if (this.displayOrder === 0) {
             return this.immatriculation + ' ' + this.marque.afficher();
