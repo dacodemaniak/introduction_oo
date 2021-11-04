@@ -6,7 +6,20 @@ import { Vehicule } from "./vehicule";
  * pour collectionner uniquement les objets Véhicule
  */
 export class Vehicules extends Collection<Vehicule> {
+    private static instance: Vehicules;
+
     public displayOrder: number = 0;
+
+    private constructor() {
+        super();
+    }
+
+    public static getInstance(): Vehicules {
+        if (!Vehicules.instance) {
+            Vehicules.instance = new Vehicules();
+        }
+        return Vehicules.instance;
+    }
 
     public add(vehicule: Vehicule): void {
         vehicule.displayOrder = this.displayOrder;

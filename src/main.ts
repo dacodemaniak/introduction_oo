@@ -70,7 +70,7 @@ console.log('Elément n° 2 ', collection.get(2));
 /**
  * Instancier une collection de Véhicules
  */
-const vehicules: Vehicules = new Vehicules();
+const vehicules: Vehicules = Vehicules.getInstance();
 vehicules.displayOrder = 0;
 
 
@@ -79,7 +79,7 @@ maVoiture.setMarque(marque1);
 maVoiture.displayOrder = 1;
 vehicules.add(maVoiture);
 
-const vehiculeCollection: Vehicules = new Vehicules();
+const vehiculeCollection: Vehicules = Vehicules.getInstance();
 
 const autreVoiture: Vehicule = new Vehicule('BBB 888 CCC');
 autreVoiture.setMarque(collection.get(2));
